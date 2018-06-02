@@ -48,6 +48,12 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	pre code {
+		background-color: #eee;
+		border: 1px solid #999;
+		display: block;
+		padding: 10px;
+	}
 /* Box Model */
 
 	*, *:before, *:after {

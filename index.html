@@ -15,109 +15,91 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
-	<body class="landing">
+	<body>
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
+				<!-- Main -->
+					<article id="main">
+						<header>
 							<h2>Stock Buy Sell</h2>
-							<p>Sebuah metode untuk memaksimalkan keuntungan<br /></p>
-						</div>
-					</section>
+							<p>Model dan Simulasi</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Apakah Itu?</h2>
+								<h3>Apakah Itu?</h3>
 								<p><b>Stock Buy Sell</b> adalah suatu metode yang digunakan untuk <b>memaksimalkan keuntungan</b> dengan
-								menentukan <b>rencana pembelian dan penjualan</b> selama beberapa waktu yang ditentukan. <br />
-								Misalkan terdapat suatu barang dengan harga ditunjukkan dalam array {100, 180, 260, 310, 40, 535, 695},
+								menentukan <b>rencana pembelian dan penjualan</b> selama beberapa waktu yang ditentukan.</p>
+								<p>Misalkan terdapat suatu barang dengan harga ditunjukkan dalam array {100, 180, 260, 310, 40, 535, 695},
 								dengan nomor indeks adalah nomor hari. Keuntungan maksimal didapatkan dengan melakukan
 								pembelian di hari ke-1 lalu penjualan di hari ke-4. Lalu dilanjutkan dengan melakukan
 								pembelian di hari ke-5 lalu penjualan di hari ke-7.</p>
-							</header>
-						</div>
-					</section>
+								<hr />
 
-				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2>Magna primis lobortis<br />
-								sed ullamcorper</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+								<h3>Saham</h3>
+								<p>Saham adalah satuan nilai atau pembukuan dalam berbagai instrumen finansial yang mengacu
+								pada bagian kepemilikan sebuah perusahaan. Wujud saham berupa selembar kertas yang menerangkan
+								pemiliknya. Akan tetapi, sekarang ini sistem tanpa warkat sudah mulai dilakukan di Bursa Efek Jakarta.
+								Bentuk kepemilikannya tidak lagi berupa lembaran saham yang diberi nama pemiliknya tapi sudah berupa
+								akun atas nama pemilik atau saham tanpa warkat. Jadi, penyelesaian transaksi akan semakin cepat
+								dan mudah. Saham atau ekuitas merupakan surat berharga yang sudah banyak dikenal masyarakat. </p>
+								<p>Saham memiliki nilai yang senantiasa berubah-ubah. Oleh karena itu investasi saham memiliki risiko
+								yang cukup besar. Salah satu kerugiannya yaitu capital loss, yaitu jika harga beli saham lebih besar
+								daripada harga jual. Namun, dengan menggunakan strategi yang tepat, investor dapat memperoleh
+								keuntungan yang besar. Untuk mendapatkan keuntungan yang besar investor harus berusaha memaksimasi
+								profit. </p>
+								
+								<hr />
+								<h3>Maksimasi Profit</h3>
+								<p>Maksimasi profit merupakan permasalahan optimasi. Nilai profit didapatkan dari selisih harga
+								harga saham dengan harga pembelian saham. Perhitungan didapatkan berdasarkan data harga saham
+								setiap hari dalam periode tertentu. Profit maksimum adalah nilai selisih harga jual saham terbesar
+								dengan harga beli terkecil yang ada dalam satu periode. Solusi dapat diperoleh dengan mencari semua
+								kemungkinan transaksi dan mencari nilai keuntungannya, contohnya dengan mengiterasi nilai x dan y mulai
+								dari 1, 2, ..., n. pembelian hari x dan penjualan hari y akan memeroleh keuntungan z. Namun metode ini memiliki
+								kelemahan yaitu boleh didapatkan nilai z negatif, yang artinya kerugian juga ikut diperhitungkan padahal
+								yang dicari hanyalah keuntungan. Selain itu, perhitungan akan sangat lama karena akan memandingkan transaksi
+								sebanyak permutasi dari jumlah hari. Oleh karena itu, permasalahan ini lebih tepat diselesaikan secara linear
+								menggunakan algoritma greedy. </p>
+								
+								<hr/>
+								<h3>Algoritma</h3>
+								<p>Algoritma greedy hanya akan mencatat nilai minima lokal untuk pembelian saham dan maksima lokal untuk penjualan
+								saham. Berikut adalah algoritmanya. </p>
+								
+<pre><code>int alg_g(int *A, int len) {
+    int min = len>0 ? A[0] : 0;
+    int max = 0;
+    for (int i=0; i<len; i++) {
+        if (A[i] < min)
+            min = A[i];
+        else if (A[i]-min > max)
+            max = A[i] - min;
+    }
+    return max;
+}
+
+int main () {
+    int A[MAX_LEN];
+    int len = 0;
+    int n;
+    while(Si(n) != EOF)
+        A[len++] = n;
+    printf("%d\n", alg_g(A, len));
+    return 0;
+}
+</code></pre>
+								
+								<p>Algoritma greedy stock buy sell masih memiliki kekurangan yaitu algoritma ini tidak dapat diaplikasikan secara
+								real sebab perubahan nilai real saham tidak dapat diprediksi. Akan tetapi, seorang analisis dapat mengambil sampel data
+								dari harga saham yang telah lalu untuk mengaproksimasi potensi profit maksimal yang dapat diperoleh dalam periode
+								tertentu dengan mengaplikasikan algoritma ini. Manfaat bagi investor dari hasil yang didapatkan yaitu dapat dijadikan
+								sebagai pedoman waktu yang tepat untuk menjual dan untuk membeli saham. </p>
 							</div>
 						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Augue eleifend aliquet<br />
-								sed condimentum</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Accumsan mus tortor nunc aliquet</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
-							</header>
-							<ul class="features">
-								<li class="icon fa-paper-plane-o">
-									<h3>Arcu accumsan</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-laptop">
-									<h3>Ac Augue Eget</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-code">
-									<h3>Mus Scelerisque</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-headphones">
-									<h3>Mauris Imperdiet</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-heart-o">
-									<h3>Aenean Primis</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-flag-o">
-									<h3>Tortor Ut</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>Arcue ut vel commodo</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
-							</header>
-							<ul class="actions vertical">
-								<li><a href="#" class="button fit special">Activate</a></li>
-								<li><a href="#" class="button fit">Learn More</a></li>
-							</ul>
-						</div>
-					</section>
+					</article>
 
 				<!-- Footer -->
 					<footer id="footer">
