@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Stock Buy Sell</title>
+		<title>Memaksimalkan Profit Jual Beli Saham</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -23,22 +23,13 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Stock Buy Sell</h2>
+							<h2>Memaksimalkan profit Jual Beli Saham</h2>
 							<p>Model dan Simulasi</p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
-
-								<h3>Apakah Itu?</h3>
-								<p><b>Stock Buy Sell</b> adalah suatu metode yang digunakan untuk <b>memaksimalkan keuntungan</b> dengan
-								menentukan <b>rencana pembelian dan penjualan</b> selama beberapa waktu yang ditentukan.</p>
-								<p>Misalkan terdapat suatu barang dengan harga ditunjukkan dalam array {100, 180, 260, 310, 40, 535, 695},
-								dengan nomor indeks adalah nomor hari. Keuntungan maksimal didapatkan dengan melakukan
-								pembelian di hari ke-1 lalu penjualan di hari ke-4. Lalu dilanjutkan dengan melakukan
-								pembelian di hari ke-5 lalu penjualan di hari ke-7.</p>
-								<hr />
-
 								<h3>Saham</h3>
+								<center><img src="images/saham.jpg" alt="Saham"></center>
 								<p>Saham adalah satuan nilai atau pembukuan dalam berbagai instrumen finansial yang mengacu
 								pada bagian kepemilikan sebuah perusahaan. Wujud saham berupa selembar kertas yang menerangkan
 								pemiliknya. Akan tetapi, sekarang ini sistem tanpa warkat sudah mulai dilakukan di Bursa Efek Jakarta.
@@ -53,6 +44,7 @@
 								
 								<hr />
 								<h3>Maksimasi Profit</h3>
+								<center><img src="images/profit.jpg" alt="Profit"></center>
 								<p>Maksimasi profit merupakan permasalahan optimasi. Nilai profit didapatkan dari selisih harga
 								harga saham dengan harga pembelian saham. Perhitungan didapatkan berdasarkan data harga saham
 								setiap hari dalam periode tertentu. Profit maksimum adalah nilai selisih harga jual saham terbesar
@@ -64,8 +56,13 @@
 								sebanyak permutasi dari jumlah hari. Oleh karena itu, permasalahan ini lebih tepat diselesaikan secara linear
 								menggunakan algoritma greedy. </p>
 								
+								<h3>Stock Buy Sell</h3>
+								<center><img src="images/bs.jpg" alt="Buy-Sell" style="width:450px;height:300px;"></center>
+								<p><b>Stock Buy Sell</b> adalah suatu metode yang digunakan untuk <b>memaksimalkan keuntungan</b> dengan
+								menentukan <b>rencana pembelian dan penjualan</b> selama beberapa waktu yang ditentukan.</p>
+								
 								<hr/>
-								<h3>Algoritma</h3>
+								<h3>Algoritma dan Simulasi</h3>
 								<p>Algoritma greedy hanya akan mencatat nilai minima lokal untuk pembelian saham dan maksima lokal untuk penjualan
 								saham. Berikut adalah algoritmanya. </p>
 								
@@ -91,12 +88,35 @@ int main () {
     return 0;
 }
 </code></pre>
-								
-								<p>Algoritma greedy stock buy sell masih memiliki kekurangan yaitu algoritma ini tidak dapat diaplikasikan secara
+								<p>Misalkan terdapat suatu barang dengan harga ditunjukkan dalam array {100, 180, 260, 310, 40, 535, 695},
+								dengan nomor indeks adalah nomor hari. Pemecahan masalah dalam kasus ini dapat digunakan metode Stock Buy Sell.
+								Keuntungan maksimal didapatkan dengan melakukan pembelian di hari ke-1 lalu penjualan di hari ke-4. Lalu 
+								dilanjutkan dengan melakukan pembelian di hari ke-5 lalu penjualan di hari ke-7. </p>
+								<p>Tetapi, algoritma greedy stock buy sell masih memiliki kekurangan yaitu algoritma ini tidak dapat diaplikasikan secara
 								real sebab perubahan nilai real saham tidak dapat diprediksi. Akan tetapi, seorang analisis dapat mengambil sampel data
 								dari harga saham yang telah lalu untuk mengaproksimasi potensi profit maksimal yang dapat diperoleh dalam periode
 								tertentu dengan mengaplikasikan algoritma ini. Manfaat bagi investor dari hasil yang didapatkan yaitu dapat dijadikan
 								sebagai pedoman waktu yang tepat untuk menjual dan untuk membeli saham. </p>
+								
+								<hr />
+								<h3>Referensi</h3>
+								<ul style="text-align: left;">
+									<li><a href="http://javabypatel.blogspot.com/2016/08/stock-buy-sell-to-maximize-profit.html" target="_blank">Stock Buy Sell</a></li>
+									<li><a href="https://id.wikipedia.org/wiki/Saham" target="_blank">Saham</a></li>
+									
+								</ul>
+								
+								<hr />
+								<h3>Pembagian Tugas</h3>
+									<li>Rabbi Fijar Mayoza (13516081)</li>
+									1. Saham <br />
+									2. Maksimasi Profit <br />
+									3. Algoritma <br /> <br/>
+									<li>Kurniandha Sukma Yunastrian (13516106)</li>
+									1. Stock Buy Sell <br />
+									2. Simulasi Permasalahan<br />
+									3. Layouter
+									
 							</div>
 						</section>
 					</article>
